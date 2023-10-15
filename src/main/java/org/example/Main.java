@@ -11,6 +11,34 @@ public class Main {
         queue1.add(new MyComparableClass(6));
         queue1.add(new MyComparableClass(17));
         queue1.add(new MyComparableClass(10));
+        queue1.add(new MyComparableClass(50));
+
+        System.out.println(queue1.getSize());
+        System.out.println(queue1.peek().getValue());
+        System.out.println(queue1.poll().getValue());
+        System.out.println(queue1.getSize());
+        System.out.println(queue1.peek().getValue());
+
+        queue1.add(new MyComparableClass(39));
+        queue1.add(new MyComparableClass(21));
+        queue1.add(new MyComparableClass(40));
+        queue1.add(new MyComparableClass(60));
+        queue1.add(new MyComparableClass(75));
+
+        System.out.println(queue1.getSize());
+        System.out.println(queue1.peek().getValue());
+        System.out.println(queue1.poll().getValue());
+        System.out.println(queue1.getSize());
+
+        while (queue1.getSize() > 0) {
+            System.out.println(queue1.poll().getValue());
+        }
+        System.out.println("-------");
+
+        System.out.println("Queue 1:");
+        queue1.add(new MyComparableClass(6));
+        queue1.add(new MyComparableClass(17));
+        queue1.add(new MyComparableClass(10));
         queue1.add(new MyComparableClass(10));
         queue1.add(new MyComparableClass(50));
         queue1.add(new MyComparableClass(39));
@@ -19,7 +47,7 @@ public class Main {
         queue1.add(new MyComparableClass(60));
         queue1.add(new MyComparableClass(75));
 
-        System.out.println("Queue 1:");
+
         System.out.println(queue1.poll());
         System.out.println(queue1.peek() + "peeking");
         System.out.println(queue1.poll());
