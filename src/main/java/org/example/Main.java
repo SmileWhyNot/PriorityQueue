@@ -7,27 +7,31 @@ public class Main {
     public static void main(String[] args) {
 
 // Вариант 1: Создать объект PriorityQueueCustom и передать класс, реализующий Comparable
-//        PriorityQueueCustom<MyComparableClass> queue1 = new PriorityQueueCustom<>(MyComparableClass.class);
-//        queue1.add(new MyComparableClass(6));
-//        queue1.add(new MyComparableClass(17));
-//        queue1.add(new MyComparableClass(10));
-//        queue1.add(new MyComparableClass(50));
-//        queue1.add(new MyComparableClass(39));
-//        queue1.add(new MyComparableClass(21));
-//        queue1.add(new MyComparableClass(40));
-//        queue1.add(new MyComparableClass(60));
-//        queue1.add(new MyComparableClass(75));
-//
-//        System.out.println("Queue 1:");
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
-//        System.out.println(queue1.poll());
+        PriorityQueueCustom<MyComparableClass> queue1 = new PriorityQueueCustom<>(MyComparableClass.class);
+        queue1.add(new MyComparableClass(6));
+        queue1.add(new MyComparableClass(17));
+        queue1.add(new MyComparableClass(10));
+        queue1.add(new MyComparableClass(10));
+        queue1.add(new MyComparableClass(50));
+        queue1.add(new MyComparableClass(39));
+        queue1.add(new MyComparableClass(21));
+        queue1.add(new MyComparableClass(40));
+        queue1.add(new MyComparableClass(60));
+        queue1.add(new MyComparableClass(75));
+
+        System.out.println("Queue 1:");
+        System.out.println(queue1.poll());
+        System.out.println(queue1.peek() + "peeking");
+        System.out.println(queue1.poll());
+        System.out.println(queue1.peek() + "peeking");
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
+        System.out.println(queue1.poll());
 
 
 

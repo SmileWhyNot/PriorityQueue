@@ -57,16 +57,31 @@ public class PriorityQueueCustom<T> {
 
         int curInd = 0;
 
-        while (elements[2 * curInd + 1] != null && elements[2 * curInd + 2] != null) {
-            int indToPaste = (comparator.compare(elements[2 * curInd + 1], elements[2 * curInd + 2]) < 0) ? (2 * curInd + 1) : (2 * curInd + 2);
-            swap(elements, curInd, indToPaste);
-            curInd = indToPaste;
+        while (curInd < curAddIndex-1) {
+            int smallestIndex = getSmallestIndex(curInd);
+
+            if (smallestIndex != curInd) {
+                swap(curInd, smallestIndex);
+                curInd = smallestIndex;
+            } else {
+                break;
+            }
         }
-        if(elements[2 * curInd + 1] != null && comparator.compare(elements[2 * curInd + 1], elements[curInd]) < 0) {
-            swap(elements, curInd, 2 * curInd + 1);
-        } else if (elements[2 * curInd + 2] != null  && comparator.compare(elements[2 * curInd + 2], elements[curInd]) < 0) {
-            swap(elements, curInd, 2 * curInd + 2);
+    }
+
+    private int getSmallestIndex(int curInd) {
+        int leftChildIndex = 2 * curInd + 1;
+        int rightChildIndex = 2 * curInd + 2;
+        int smallestIndex = curInd;
+
+        if (leftChildIndex < (curAddIndex - 1) && comparator.compare(elements[leftChildIndex], elements[smallestIndex]) < 0) {
+            smallestIndex = leftChildIndex;
         }
+
+        if (rightChildIndex < (curAddIndex - 1) && comparator.compare(elements[rightChildIndex], elements[smallestIndex]) < 0) {
+            smallestIndex = rightChildIndex;
+        }
+        return smallestIndex;
     }
 
     private void siftUp() {
@@ -75,17 +90,17 @@ public class PriorityQueueCustom<T> {
             int parentIndex = lastElemIndex / 2;
             T valToCompare = elements[parentIndex];
             if (comparator.compare( elements[lastElemIndex], valToCompare) < 0) {
-                swap(elements, lastElemIndex, parentIndex);
+                swap(lastElemIndex, parentIndex);
                 lastElemIndex = parentIndex;
             } else
                 break;
         }
     }
 
-    private void swap(T[] mass, int curInd, int indToPaste) {
-        T temp = mass[indToPaste];
-        mass[indToPaste] = mass[curInd];
-        mass[curInd] = temp;
+    private void swap(int curInd, int indToPaste) {
+        T temp = elements[indToPaste];
+        elements[indToPaste] = elements[curInd];
+        elements[curInd] = temp;
     }
 
 }
