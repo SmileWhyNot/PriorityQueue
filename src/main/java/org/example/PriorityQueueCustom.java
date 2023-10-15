@@ -78,11 +78,13 @@ public class PriorityQueueCustom<T> {
         int rightChildIndex = 2 * addedElemIndex + 2;
         int smallestIndex = addedElemIndex;
 
-        if (leftChildIndex < (currentQueueSize - 1) && comparator.compare(elements[leftChildIndex], elements[smallestIndex]) < 0) {
+        if (leftChildIndex < (currentQueueSize - 1)
+                && comparator.compare(elements[leftChildIndex], elements[smallestIndex]) < 0) {
             smallestIndex = leftChildIndex;
         }
 
-        if (rightChildIndex < (currentQueueSize - 1) && comparator.compare(elements[rightChildIndex], elements[smallestIndex]) < 0) {
+        if (rightChildIndex < (currentQueueSize - 1)
+                && comparator.compare(elements[rightChildIndex], elements[smallestIndex]) < 0) {
             smallestIndex = rightChildIndex;
         }
         return smallestIndex;
